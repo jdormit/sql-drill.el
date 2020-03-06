@@ -1,13 +1,13 @@
 ;;; sql-drill.el --- apache drill support for sql-mode  -*- lexical-binding: t -*-
 ;; Use of this source code is governed by a BSD-style
 ;; license that can be found in the LICENSE file.
-;; Copyright (C) 2016 ¦Êeen
+;; Copyright (C) 2020 Jeremy Dormitzer
 
-;; Author: Sunrin KIM(¦Êeen <3han5chou7@gmail.com
-;; Maintainer: Sunrin KIM <3han5chou7@gmail.com
+;; Author: Sunrin KIM(¦Êeen <3han5chou7@gmail.com>
+;; Maintainer: Jeremy Dormitzer <jeremy.dormitzer@gmail.com>
 ;; Version: 0.0.1
-;; URL: https://github.com/KeenS/sql-drill.el
-;; Keywords: comm languages processes
+;; URL: https://github.com/jdormit/sql-drill.el
+;; Keywords: sql
 ;; This file is not part of GNU Emacs.
 ;;
 ;;; Commentary:
@@ -103,7 +103,7 @@
 
 (add-to-list 'sql-product-alist
   '(drill
-    :name "Apatch Drill"
+    :name "Apache Drill"
     :free-software t
     :font-lock sql-mode-drill-font-lock-keywords
     :sqli-program sql-drill-program
@@ -117,9 +117,6 @@
     :prompt-cont-regexp "^\\(\\. \\)*\\.> "
     :terminator ";"))
 
-
 (provide 'sql-drill)
 
 ;;; sql-drill.el ends here
-
-; LocalWords:  sql SQL ApacheDrill Drill
