@@ -87,7 +87,7 @@
   :type 'sql-login-params
   :group 'SQL)
 
-(defun sql-comint-drill (product options)
+(defun sql-comint-drill (product options &optional buf-name)
   "Connect to apache drill in a comint buffer."
   (let ((params
          (append
@@ -98,7 +98,7 @@
           (if (not (string= "" sql-server))
               (list "-u" sql-server))
           options)))
-    (sql-comint product params)))
+    (sql-comint product params buf-name)))
 
 
 (add-to-list 'sql-product-alist
@@ -116,6 +116,11 @@
     :prompt-regexp ".*?> "
     :prompt-cont-regexp "^\\(\\. \\)*\\.> "
     :terminator ";"))
+
+;;;###autoload
+(defun sql-drill (&optional buffer)
+  (interactive "P")
+  (sql-product-interactive 'drill buffer))
 
 (provide 'sql-drill)
 
